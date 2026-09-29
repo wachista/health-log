@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ヘルスログがアクセスする情報、利用目的、保存、外部分析、アクセスの取り消しと削除について説明します。">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>プライバシーポリシー｜ヘルスログ</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へ移動</a>
+  <header><div class="wrap topbar">
+    <a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">h</span>ヘルスログ <small>health-log</small></a>
+    <nav aria-label="メインナビゲーション">
+      <a href="./index.html">アプリについて</a>
+      <a href="./privacy.html" aria-current="page">プライバシー</a>
+    </nav>
+  </div></header>
+  <main id="main" class="wrap">
+<article class="policy">
+  <p class="eyebrow">ヘルスログ / health-log</p>
+  <h1>プライバシーポリシー</h1>
+  <p class="meta">文書バージョン：1.0</p>
+  <p>このポリシーは、本人専用の健康・活動記録ツール「ヘルスログ」（以下「本アプリ」）によるデータの取り扱いを説明します。運用者と利用者は、いずれも開発者本人です。一般向けの利用登録は受け付けていません。</p>
+
+  <section><h2>1. アクセスする情報と権限</h2>
+    <p>本アプリは、本人がGoogle OAuthでアクセスを許可したアカウントのデータを、Google Health APIから読み取ります。現在の取得対象は、体重、体脂肪率、歩数、総消費カロリー、およびそれらの測定・集計日時、記録ID、取得状況などの付随情報です。</p>
+    <p>Google Healthに対して使用するのは読み取り専用の権限です。権限はデータのグループ単位のため、許可画面には取得対象より広い説明が表示される場合があります。Google Healthの元の健康データを書き換えるための権限は要求しません。</p>
+    <details><summary>使用するGoogle Healthの権限</summary><p><code>https://www.googleapis.com/auth/googlehealth.health_metrics_and_measurements.readonly</code></p><p><code>https://www.googleapis.com/auth/googlehealth.activity_and_fitness.readonly</code></p></details>
+    <p>食事や運動など、本人が台帳へ直接入力する情報はGoogle Health APIからの取得値と区別します。睡眠など取得対象を追加する場合は、説明を更新し、必要な権限について本人の同意を得たうえで実装します。</p>
+  </section>
+
+  <section><h2>2. 利用目的</h2>
+    <p>取得した情報は、本人の記録保存、時系列の表示、食事・活動記録との比較、本人向けの振り返りに使用します。重複した記録の取り込みを防ぎ、同期の状況を確認するためにも使用します。体脂肪率や消費カロリーなどの機器推定値と、未取得の情報を区別します。</p>
+    <p>本アプリは医療機器ではなく、診断・治療・投薬量の決定には使用しません。</p>
+  </section>
+
+  <section><h2>3. 保存先とアクセス管理</h2>
+    <p>健康・活動の記録は、本人が管理するGoogleスプレッドシートに保存します。処理は本人のGoogle Apps Scriptプロジェクトで実行します。保存先は非公開で運用し、台帳とスクリプトの編集権限は本人が管理します。</p>
+    <p>クライアントシークレットや更新用トークンなどの認証情報は、Apps Scriptのスクリプトプロパティで管理します。これらは公開サイトや公開リポジトリに保存しません。スクリプトの編集者は認証情報へアクセスできるため、編集権限を第三者に付与しない運用とします。</p>
+    <p>動作確認用の実行ログには、測定値、測定日時、記録ID、集計結果などが含まれる場合があります。ログも本人が管理し、外部へ共有するときは必要な部分だけを選びます。認証情報を実行ログへ出力する運用は行いません。</p>
+  </section>
+
+  <section><h2>4. 外部サービスとの関係</h2>
+    <p>記録の取得・処理・保存にはGoogleのサービスを利用します。公開説明ページの配信にはGitHub Pagesを利用しますが、GitHub Pagesには健康データや認証情報を送信・掲載しません。</p>
+    <p>本人がChatGPTなどの外部分析サービスを利用する場合は、本人が明示的に許可した必要な記録のみを提供します。これはGoogle Health APIへのアクセス許可とは別の操作です。本アプリの取得・保存スクリプトには、OpenAIへの自動送信処理はありません。</p>
+    <p>外部サービスに提供したデータの処理・保持は、そのサービスの規約と本人の設定にも従います。本人向けの分析に必要な範囲に限定し、一般目的のAIモデルの学習に利用されない設定・サービス条件を確認して利用します。</p>
+    <p>データを販売したり、広告配信、信用評価、一般目的のAIモデルの学習のために提供・利用したりしません。その他の第三者への提供は、本人の明示的な許可または法令上必要な場合に限ります。</p>
+  </section>
+
+  <section><h2>5. Google APIデータの限定的な利用</h2>
+    <p>Google APIから受け取った情報の利用および他サービスへの転送は、<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>のLimited Use要件を含む適用条件に従います。取得したデータは、このサイトで明示した本人向けの記録・分析機能のためにのみ取り扱います。</p>
+  </section>
+
+  <section><h2>6. アクセスの取り消し・保持・削除</h2>
+    <p>本人は、<a href="https://myaccount.google.com/connections">Googleアカウントの接続管理</a>で本アプリのアクセスを取り消せます。定期同期を設定した場合は、Apps Scriptのトリガーを削除することで定期実行を止められます。</p>
+    <p>記録は本人が削除するまで保持します。台帳の該当記録またはファイル、スクリプトの保存済み認証情報、必要に応じて分析サービス側へ提供した記録を、それぞれのサービスで削除できます。アクセスを取り消すだけでは、すでに保存した記録は自動で削除されません。</p>
+    <p>各サービスのゴミ箱、変更履歴、バックアップ、実行ログなどの保持・削除には、そのサービスの仕組みとポリシーが適用されます。</p>
+  </section>
+
+  <section><h2>7. この公開サイトについて</h2>
+    <p>このサイト自体には、健康情報の入力フォーム、ログイン機能、広告、アクセス解析用スクリプト、外部フォントを設置していません。サイトの閲覧によって本アプリのGoogle Health認証は開始されません。</p>
+    <p>ホスティング事業者のGitHubは、セキュリティ目的で閲覧者のIPアドレスを記録・保存します。詳細は<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pagesのデータ収集の説明</a>と<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubのプライバシーステートメント</a>を参照してください。</p>
+  </section>
+
+  <section><h2>8. 運用者・連絡先・変更</h2>
+    <p>運用者は、このサイトを公開するGitHubアカウントの管理者（アプリの開発者兼利用者本人）です。お問い合わせは、Google OAuth同意画面に表示されるユーザーサポートメールアドレスへお願いします。</p>
+    <p>取得情報や用途を変更するときは、このページの内容と文書バージョンを更新し、追加の同意が必要な場合は変更後の取り扱いを開始する前に本人の同意を得ます。</p>
+  </section>
+  <a class="button" href="./index.html">アプリの紹介へ戻る</a>
+</article>
+</main>
+  <footer><div class="wrap foot"><span>ヘルスログ / health-log · 本人専用の記録ツール</span><a href="./privacy.html">プライバシーポリシー</a></div></footer>
+</body>
+</html>

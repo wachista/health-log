@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="本人が許可したGoogle Healthの記録を、非公開の台帳へ保存する個人用ツール「ヘルスログ」の説明ページです。">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>ヘルスログ｜本人専用の健康・活動記録</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へ移動</a>
+  <header><div class="wrap topbar">
+    <a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">h</span>ヘルスログ <small>health-log</small></a>
+    <nav aria-label="メインナビゲーション">
+      <a href="./index.html" aria-current="page">アプリについて</a>
+      <a href="./privacy.html">プライバシー</a>
+    </nav>
+  </div></header>
+  <main id="main" class="wrap">
+<div class="hero">
+  <p class="eyebrow">自分のための、健康・活動記録</p>
+  <h1>日々の記録を、<br>振り返りにつなげる。</h1>
+  <p class="lead">ヘルスログは、開発者本人が自分の健康・活動データを整理するための個人用ツールです。Google Healthから本人が許可したデータを読み取り、本人管理のGoogleスプレッドシートへ保存します。</p>
+  <div class="pills"><span class="pill">本人専用</span><span class="pill">Healthデータは読み取り専用</span><span class="pill">記録台帳は非公開で運用</span></div>
+  <div class="actions"><a class="button" href="./privacy.html">データの取り扱いを見る →</a></div>
+</div>
+<section aria-labelledby="functions">
+  <h2 id="functions" class="section-title">何をするツールか</h2>
+  <div class="cards">
+    <article class="card"><span class="n">01 / からだの記録</span><h3>体重・体脂肪率</h3><p>測定日時と一緒に記録し、過去の測定と日々の変化を振り返ります。体脂肪率は機器による推定値として区別します。</p></article>
+    <article class="card"><span class="n">02 / 活動の記録</span><h3>歩数・総消費カロリー</h3><p>日本時間の日単位で保存します。総消費カロリーは機器の推定値として扱い、欠測をゼロに置き換えません。</p></article>
+    <article class="card"><span class="n">03 / 自分の振り返り</span><h3>本人の台帳で整理</h3><p>本人が入力した食事や運動の記録と合わせて確認します。必要に応じて、本人の許可した範囲をChatGPTなどで分析します。</p></article>
+  </div>
+</section>
+<section aria-labelledby="dataflow">
+  <h2 id="dataflow" class="section-title">データの流れ</h2>
+  <div class="flow"><div><strong>Google Health</strong><small>本人が許可した記録</small></div><span class="arrow" aria-hidden="true">→</span><div><strong>Apps Script</strong><small>読み取り・整理・保存</small></div><span class="arrow" aria-hidden="true">→</span><div><strong>本人の記録台帳</strong><small>非公開のGoogleスプレッドシート</small></div></div>
+  <p class="muted">取得は本人の手動実行、または本人が設定した定期実行で行います。このウェブサイトから認証や同期を実行することはありません。</p>
+</section>
+<section class="notice" aria-labelledby="private">
+  <h2 id="private">ここに健康データは公開しません。</h2>
+  <p>このサイトは、アプリの目的とデータの取り扱いを説明するためのページです。測定値・記録台帳・ログイン情報・認証トークンを掲載する場所ではありません。</p>
+  <p>一般向けの利用登録やログイン機能はありません。取得した情報の販売や広告利用は行いません。</p>
+</section>
+<section class="plain" aria-labelledby="operator">
+  <h2 id="operator" class="section-title">運用者とお問い合わせ</h2>
+  <p>運用者は、このサイトを公開するGitHubアカウントの管理者（アプリの開発者兼利用者本人）です。お問い合わせは、Google OAuth同意画面に表示されるユーザーサポートメールアドレスへお願いします。</p>
+  <p>本ツールは記録整理のためのもので、診断・治療・投薬判断を行いません。Google、Fitbit、GitHub、OpenAIの公式アプリではなく、これらの事業者による承認や認定を表示するものではありません。</p>
+</section>
+</main>
+  <footer><div class="wrap foot"><span>ヘルスログ / health-log · 本人専用の記録ツール</span><a href="./privacy.html">プライバシーポリシー</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# 説明サイト専用。補助的な設定であり、秘密情報の公開を保証して防ぐものではありません。
+.env
+.env.*
+*.gs
+*.zip
+*.csv
+*.xlsx
+*.xls
+*.pdf
+*.log
+*.png
+*.jpg
+*.jpeg
+*credentials*.json
+*client_secret*.json
+*.pem
+*.key
+.DS_Store
+Thumbs.db
